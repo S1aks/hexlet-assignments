@@ -11,7 +11,7 @@ class BulletinsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'get show' do
-    bulletin = bulletins(:bulletin_1)
+    bulletin = bulletins('bulletin_1')
 
     get bulletin_path(bulletin)
 
