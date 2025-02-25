@@ -1,0 +1,8 @@
+bulletin_1:
+    id: 1
+    title: "Title 1"
+    body: "Bulletin 1 body"
+bulletin_2:
+    id: 2
+    title: "Title 2"
+    body: "Bulletin 2 body"
