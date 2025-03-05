@@ -1,0 +1,47 @@
+<%= form_with model: @task, local: true do |form| %>
+  <% if @task.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@task.errors.count, "error") %>:</h2>
+      <ul>
+        <% @task.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div>
+    <%= form.label :status %>
+    <%= form.text_field :status %>
+  </div>
+
+  <div>
+    <%= form.label :creator %>
+    <%= form.text_field :creator %>
+  </div>
+
+  <div>
+    <%= form.label :performer %>
+    <%= form.text_field :performer %>
+  </div>
+
+  <div>
+    <%= form.label :completed %>
+    <%= form.check_box :completed, as: :boolean %>
+  </div>
+
+  <div>
+    <%= form.submit "Save" %>
+  </div>
+<% end %>
+<%= link_to 'Back to tasks', tasks_path %>

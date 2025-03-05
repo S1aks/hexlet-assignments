@@ -1,0 +1,10 @@
+<h1>Show</h1>
+<div>
+  <p><%= "Name: #{@task.name}" %></p>
+  <p><%= "Description: #{@task.description}" %></p>
+  <p><%= "Status: #{@task.status}" %></p>
+  <p><%= "Creator: #{@task.creator}" %></p>
+  <p><%= "Performer: #{@task.performer}" %></p>
+  <p><%= "Completed: #{@task.completed}" %></p>
+  <%= link_to 'Back to tasks', tasks_path %>
+</div>
