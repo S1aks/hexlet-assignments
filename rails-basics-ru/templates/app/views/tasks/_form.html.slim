@@ -1,0 +1,28 @@
+= form_with model: @task, local: true do |form|
+  - if @task.errors.any?
+    div#error_explanation
+      h2 #{pluralize(@task.errors.count, "error")}:
+      ul
+        - @task.errors.full_messages.each do |message|
+          li= message
+  div
+    = form.label :name 
+    = form.text_field :name
+  div
+    = form.label :description
+    = form.text_area :description
+  div
+    = form.label :status
+    = form.text_field :status
+  div
+    = form.label :creator
+    = form.text_field :creator
+  div
+    = form.label :performer
+    = form.text_field :performer
+  div
+    = form.label :completed
+    = form.check_box :completed, as: :boolean
+  div
+    = form.submit "Save"
+= link_to 'Back to tasks', tasks_path

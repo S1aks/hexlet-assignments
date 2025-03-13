@@ -1,0 +1,15 @@
+h1 Tasks
+= link_to 'Create new task', new_task_path
+hr
+- @tasks.each do |task|
+  div
+    p #{task.creator}: #{task.name}
+    p
+      small
+        = task.created_at.in_time_zone('Moscow').strftime('%H:%M %d.%m.%Y')
+    = link_to 'Show', task_path(task)
+    = ' '
+    = link_to 'Edit', edit_task_path(task)
+    = ' '
+    = link_to 'Delete', task, data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }
+    hr
