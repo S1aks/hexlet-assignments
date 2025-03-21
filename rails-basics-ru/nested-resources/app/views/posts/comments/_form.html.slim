@@ -1,0 +1,6 @@
+strong = 'New comment:'
+- url = comment.nil? ? post_comments_path(post) : post_comment_path(post)
+- comment ||= post.post_comments.build
+= simple_form_for (comment), url: url do |f|
+  = f.input :content
+  = f.button :submit, class: 'btn btn-outline-primary'
