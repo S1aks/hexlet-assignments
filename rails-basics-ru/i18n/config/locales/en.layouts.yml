@@ -1,0 +1,10 @@
+en:
+  layouts:
+    application:
+      hexlet_title: © Hexlet, %{year}
+      page_title: Hexlet i18n
+    shared:
+      nav:
+        hexlet_logo: Hexlet
+        home: Home
+        posts: Posts

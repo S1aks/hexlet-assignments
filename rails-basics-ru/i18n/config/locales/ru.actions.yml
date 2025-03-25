@@ -1,0 +1,8 @@
+ru:
+  actions:
+    add: Новый пост
+    back: Назад
+    destroy: Удалить
+    destroy_confirmation: Вы уверены?
+    edit: Редактировать
+    show: Показать

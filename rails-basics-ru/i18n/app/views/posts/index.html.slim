@@ -1,0 +1,42 @@
+- content_for :title do
+  / page title (h1)
+  / BEGIN
+  h1= t('posts.title')
+  / END
+
+table.table.table-striped.table-hover.mb-5
+  thead
+    tr
+      th{ scope = 'col' } #
+      th{ scope = 'col' }
+        / table title
+        / BEGIN
+        = t('posts.table_title')
+        / END
+      th
+      th
+
+  tbody
+    - @posts.each_with_index do |post, i|
+      tr
+        th{ scope = 'row' } = i + 1
+        td = post.title
+        td
+          / comments count
+          / BEGIN
+          / - backend.store_translations :en, '.num_comments': { zero: "no messages", one: "one message", other: "%{count} messages" }
+          = t('.num_comments', count: post.comments.size)
+          / END
+        td.d-flex
+          / posts links
+          / BEGIN
+          .me-4 = link_to t('actions.show'), post
+          .me-4 = link_to t('actions.edit'), edit_post_path(post)
+          = link_to t('actions.destroy'), post, data: { turbo_method: :delete, turbo_confirm: t('actions.destroy_confirmation') }, class: 'link-danger'
+          / END
+
+/ new post link
+= link_to new_post_path, id: 'new-post-link', class: 'btn btn-primary' do
+  / BEGIN
+  = t('actions.add')
+  / END
